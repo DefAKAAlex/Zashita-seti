@@ -9,7 +9,8 @@
 *sudo nmap -sV < ip-адрес >*
 
 **sudo nmap -sS 10.130.0.22**
-![pic1](https://github.com/DefAKAAlex/Zashita-seti.git/IMG/nmap-sS.png)
+
+![pic1](https://github.com/DefAKAAlex/Zashita-seti/blob/main/IMG/nmap-sS.png)
 
 >08/24/2026-19:08:29.372823  [**] [1:2010937:3] ET SCAN Suspicious inbound to mySQL port 3306 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.130.0.5:42468 -> 10.130.0.22:3306
 >08/24/2026-19:08:29.374199  [**] [1:2010936:3] ET SCAN Suspicious inbound to Oracle SQL port 1521 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.130.0.5:42468 -> 10.130.0.22:1521
@@ -25,7 +26,8 @@
 + VNC сканирование портов 5800-5820 - обнаружен порт 5811
 
 **sudo nmap -sV 10.130.0.22**
-![pic1](https://github.com/DefAKAAlex/Zashita-seti.git/IMG/nmap-sS.png)
+
+![pic2](https://github.com/DefAKAAlex/Zashita-seti/blob/main/IMG/nmap-sS.png)
 
 >08/24/2026-19:15:53.381437  [**] [1:2010937:3] ET SCAN Suspicious inbound to mySQL port 3306 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.130.0.5:41080 -> 10.130.0.22:3306
 >08/24/2026-19:15:53.384659  [**] [1:2010939:3] ET SCAN Suspicious inbound to PostgreSQL port 5432 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.130.0.5:41080 -> 10.130.0.22:5432
@@ -38,7 +40,7 @@
 + Oracle - 1521
 
 **sudo nmap -sT 10.130.0.22**
-![pic1](https://github.com/DefAKAAlex/Zashita-seti.git/IMG/nmap-sS.png)
+![pic3](https://github.com/DefAKAAlex/Zashita-seti/blob/main/IMG/nmap-sS.png)
 
 >08/24/2026-19:18:19.975697  [**] [1:2010937:3] ET SCAN Suspicious inbound to mySQL port 3306 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.130.0.5:42766 -> 10.130.0.22:3306
 >08/24/2026-19:18:19.980565  [**] [1:2010935:3] ET SCAN Suspicious inbound to MSSQL port 1433 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.130.0.5:34932 -> 10.130.0.22:1433
@@ -48,7 +50,8 @@
 те же порты, что и в прошлом сканировании.
 
 **sudo nmap -sA 10.130.0.22**
-![pic1](https://github.com/DefAKAAlex/Zashita-seti.git/IMG/nmap-sS.png)
+
+![pic4](https://github.com/DefAKAAlex/Zashita-seti/blob/main/IMG/nmap-sS.png)
 
 не выдал ни каких данных в логах suricata так как -sA отправляет пакеты без флага SYN, что, видимо, говорит о том, что suricata отрабатывается в основном правила SYN-сканирования.
 
@@ -58,13 +61,14 @@
 *Проведите атаку на подбор пароля для службы SSH:*
 
 Изначально провёл атаку без включённого fail2ban
-![pic1](https://github.com/DefAKAAlex/Zashita-seti.git/IMG/hydra1.png)
+![pic5](https://github.com/DefAKAAlex/Zashita-seti/blob/main/IMG/hydra1.png)
+
 Пароль найден
-![pic1](https://github.com/DefAKAAlex/Zashita-seti.git/IMG/accept1.png)
+![pic6](https://github.com/DefAKAAlex/Zashita-seti/blob/main/IMG/accept1.png)
 
 
 Затем, включил fail2ban
-![pic1](https://github.com/DefAKAAlex/Zashita-seti.git/IMG/fail2ban-on.png)
+![pic7](https://github.com/DefAKAAlex/Zashita-seti/blob/main/IMG/fail2ban-on.png)
 
 
 Статус блокировки
@@ -80,7 +84,6 @@
 >   |- Total banned:     1
 >   `- Banned IP list:   10.130.0.5
 
-
 Логи fail2ban
 
 >def1@test-1:~$ sudo tail -50 /var/log/fail2ban.log
@@ -95,13 +98,6 @@
 >2026-08-24 21:25:35,297 fail2ban.actions        [2182]: NOTICE  [sshd] 10.130.0.5 already banned
 >2026-08-24 21:25:35,297 fail2ban.actions        [2182]: NOTICE  [sshd] 10.130.0.5 already banned
 >2026-08-24 21:25:35,298 fail2ban.actions        [2182]: NOTICE  [sshd] 10.130.0.5 already banned
->2026-08-24 21:25:35,303 fail2ban.filter         [2182]: INFO    [sshd] Found 10.130.0.5 - 2026-08-24 21:25:35
->2026-08-24 21:25:35,306 fail2ban.filter         [2182]: INFO    [sshd] Found 10.130.0.5 - 2026-08-24 21:25:35
->2026-08-24 21:25:35,318 fail2ban.filter         [2182]: INFO    [sshd] Found 10.130.0.5 - 2026-08-24 21:25:35
->2026-08-24 21:25:35,354 fail2ban.filter         [2182]: INFO    [sshd] Found 10.130.0.5 - 2026-08-24 21:25:35
->2026-08-24 21:25:35,354 fail2ban.filter         [2182]: INFO    [sshd] Found 10.130.0.5 - 2026-08-24 21:25:35
->2026-08-24 21:25:35,362 fail2ban.filter         [2182]: INFO    [sshd] Found 10.130.0.5 - 2026-08-24 21:25:35
->2026-08-24 21:25:35,362 fail2ban.filter         [2182]: INFO    [sshd] Found 10.130.0.5 - 2026-08-24 21:25:35
 
 События в suricata
 
