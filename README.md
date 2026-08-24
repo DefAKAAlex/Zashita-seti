@@ -12,10 +12,10 @@
 
 ![pic1](https://github.com/DefAKAAlex/Zashita-seti/blob/main/IMG/nmap-sS.png)
 
->08/24/2026-19:08:29.372823  [**] [1:2010937:3] ET SCAN Suspicious inbound to mySQL port 3306 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.130.0.5:42468 -> 10.130.0.22:3306
->08/24/2026-19:08:29.374199  [**] [1:2010936:3] ET SCAN Suspicious inbound to Oracle SQL port 1521 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.130.0.5:42468 -> 10.130.0.22:1521
->08/24/2026-19:08:29.379714  [**] [1:2010939:3] ET SCAN Suspicious inbound to PostgreSQL port 5432 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.130.0.5:42468 -> 10.130.0.22:5432
->08/24/2026-19:08:29.382425  [**] [1:2010935:3] ET SCAN Suspicious inbound to MSSQL port 1433 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.130.0.5:42468 -> 10.130.0.22:1433
+>08/24/2026-19:08:29.372823  [**] [1:2010937:3] ET SCAN Suspicious inbound to mySQL port 3306 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.130.0.5:42468 -> 10.130.0.22:3306\
+>08/24/2026-19:08:29.374199  [**] [1:2010936:3] ET SCAN Suspicious inbound to Oracle SQL port 1521 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.130.0.5:42468 -> 10.130.0.22:1521\
+>08/24/2026-19:08:29.379714  [**] [1:2010939:3] ET SCAN Suspicious inbound to PostgreSQL port 5432 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.130.0.5:42468 -> 10.130.0.22:5432\
+>08/24/2026-19:08:29.382425  [**] [1:2010935:3] ET SCAN Suspicious inbound to MSSQL port 1433 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.130.0.5:42468 -> 10.130.0.22:1433\
 >08/24/2026-19:08:29.384194  [**] [1:2002910:6] ET SCAN Potential VNC Scan 5800-5820 [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.130.0.5:42468 -> 10.130.0.22:5811
 
 Обнаружены
